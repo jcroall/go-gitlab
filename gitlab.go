@@ -23,6 +23,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"math/rand"
 	"mime/multipart"
 	"net/http"
@@ -552,6 +553,7 @@ func (c *Client) NewRequest(method, path string, opt interface{}, options []Requ
 	}
 
 	println("DEBUG: Enter GitLab NewRequest")
+	log.Printf("DEBUG: Enter GitLab NewRequest")
 
 	// Set the encoded path data
 	u.RawPath = c.baseURL.Path + path
