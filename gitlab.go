@@ -573,6 +573,7 @@ func (c *Client) NewRequest(method, path string, opt interface{}, options []Requ
 			if err != nil {
 				return nil, err
 			}
+			println(fmt.Sprintf("DEBUG: JSON Body: %s", body))
 		}
 	case opt != nil:
 		q, err := query.Values(opt)
