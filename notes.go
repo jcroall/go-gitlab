@@ -468,6 +468,7 @@ func (s *NotesService) GetMergeRequestNote(pid interface{}, mergeRequest, note i
 // https://docs.gitlab.com/ce/api/notes.html#create-new-merge-request-note
 type CreateMergeRequestNoteOptions struct {
 	Body *string `url:"body,omitempty" json:"body,omitempty"`
+  Position     *NotePosition `json:"position"`
 }
 
 // CreateMergeRequestNote creates a new note for a single merge request.
