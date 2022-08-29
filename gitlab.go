@@ -23,6 +23,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"math/rand"
 	"mime/multipart"
 	"net/http"
@@ -573,7 +574,7 @@ func (c *Client) NewRequest(method, path string, opt interface{}, options []Requ
 			if err != nil {
 				return nil, err
 			}
-			//log.Fatal(fmt.Sprintf("DEBUG: POST: Path: %s\nJSON Body: %s", path, body))
+			log.Fatal(fmt.Sprintf("DEBUG: POST: Path: %s\nJSON Body: %s", path, body))
 		}
 	case opt != nil:
 		q, err := query.Values(opt)
