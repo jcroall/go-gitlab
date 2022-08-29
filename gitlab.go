@@ -552,9 +552,6 @@ func (c *Client) NewRequest(method, path string, opt interface{}, options []Requ
 		return nil, err
 	}
 
-	log.Println("DEBUG: Enter GitLab NewRequest 1")
-	log.Fatal("DEBUG: Enter GitLab NewRequest")
-	
 	// Set the encoded path data
 	u.RawPath = c.baseURL.Path + path
 	u.Path = c.baseURL.Path + unescaped
@@ -577,11 +574,10 @@ func (c *Client) NewRequest(method, path string, opt interface{}, options []Requ
 			if err != nil {
 				return nil, err
 			}
-			println(fmt.Sprintf("DEBUG: POST: JSON Body: %s", body))
+			log.Fatal(fmt.Sprintf("DEBUG: POST: JSON Body: %s", body))
 		}
 	case opt != nil:
 		q, err := query.Values(opt)
-		println(fmt.Sprintf("DEBUG: GET: JSON Body: %s", body))
 		if err != nil {
 			return nil, err
 		}
