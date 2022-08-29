@@ -468,30 +468,6 @@ func (s *NotesService) GetMergeRequestNote(pid interface{}, mergeRequest, note i
 // https://docs.gitlab.com/ce/api/notes.html#create-new-merge-request-note
 type CreateMergeRequestNoteOptions struct {
 	Body *string `url:"body,omitempty" json:"body,omitempty"`
-	//Position NotePosition `url:"body,position" json:"position,omitempty"`
-	//Position map[string]string `url:"body,position" json:"position,omitempty"`
-	/*
-		type NotePosition struct {
-		    BaseSHA      string     `json:"base_sha"`
-		    StartSHA     string     `json:"start_sha"`
-		    HeadSHA      string     `json:"head_sha"`
-		    PositionType string     `json:"position_type"`
-		    NewPath      string     `json:"new_path,omitempty"`
-		    NewLine      int        `json:"new_line,omitempty"`
-		    OldPath      string     `json:"old_path,omitempty"`
-		    OldLine      int        `json:"old_line,omitempty"`
-		    LineRange    *LineRange `json:"line_range"`
-		}
-	*/
-	PositionBaseSHA   string `url:"position[base_sha]" json:"position[base_sha],omitempty"`
-	PositionStartSHA  string `url:"position[start_sha]" json:"position[start_sha],omitempty"`
-	PositionHeadSHA   string `url:"position[head_sha]" json:"position[head_sha],omitempty"`
-	PositionType      string `url:"position[position_type]" json:"position[position_type],omitempty"`
-	PositionNewPath   string `url:"position[new_path]" json:"position[new_path],omitempty"`
-	PositionNewLine   string `url:"position[new_line]" json:"position[new_line],omitempty"`
-	PositionOldPath   string `url:"position[old_path]" json:"position[old_path],omitempty"`
-	PositionOldLine   string `url:"position[old_line]" json:"position[old_line],omitempty"`
-	PositionLineRange string `url:"position[line_range]" json:"position[line_range],omitempty"`
 }
 
 // CreateMergeRequestNote creates a new note for a single merge request.
