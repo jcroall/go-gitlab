@@ -552,6 +552,7 @@ func (c *Client) NewRequest(method, path string, opt interface{}, options []Requ
 		return nil, err
 	}
 
+	log.Fatal("DEBUG: Enter GitLab NewRequest")
 	println("DEBUG: Enter GitLab NewRequest")
 	log.Printf("DEBUG: Enter GitLab NewRequest")
 
