@@ -552,10 +552,9 @@ func (c *Client) NewRequest(method, path string, opt interface{}, options []Requ
 		return nil, err
 	}
 
+	log.Println("DEBUG: Enter GitLab NewRequest 1")
 	log.Fatal("DEBUG: Enter GitLab NewRequest")
-	println("DEBUG: Enter GitLab NewRequest")
-	log.Printf("DEBUG: Enter GitLab NewRequest")
-
+	
 	// Set the encoded path data
 	u.RawPath = c.baseURL.Path + path
 	u.Path = c.baseURL.Path + unescaped
